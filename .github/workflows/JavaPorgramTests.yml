@@ -23,15 +23,15 @@ jobs:
         distribution: 'temurin'  # Eclipse Temurinディストリビューションを指定
 
     - name: Compile Add.java
-      run: javac TESTTEST/Add.java
+      run: javac Add.java
 
     - name: Compile MulTen.java
-      run: javac TESTTEST/MulTen.java
+      run: javac MulTen.java
 
     - name: Test Add.java
       run: |
-        echo "3 7" | java -cp TESTTEST Add | tee output.txt | grep "10"
+        echo "3 7" | java Add | tee output.txt | grep "10"
 
     - name: Test MulTen.java
       run: |
-        echo "5" | java -cp TESTTEST MulTen | tee output.txt | grep "50"
+        echo "5" | java MulTen | tee output.txt | grep "50"
